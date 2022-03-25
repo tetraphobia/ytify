@@ -1,5 +1,51 @@
 import { collapse, controls, loop, shuffle, thumbnail } from "./constants.js";
 
+const initCollapse = () => {
+  if (!collapse) return;
+
+  collapse.addEventListener("click", () => {
+    controls.classList.toggle("collapsed");
+    controls.classList.toggle("hidden");
+
+    // Switch the icon depending on collapsed state.
+    let symbol = controls.classList.contains("collapsed")
+      ? "keyboard_arrow_left"
+      : "keyboard_arrow_right";
+
+    collapse.textContent = symbol;
+  });
+};
+
+const initLoop = () => {
+  if (!loop) return;
+
+  // Ensure button is disabled by default.
+  loop.enabled = false;
+  if (loop.classList.contains("enabled")) {
+    loop.classList.remove("enabled");
+  }
+
+  loop.addEventListener("click", () => {
+    loop.classList.toggle("enabled");
+    loop.enabled = !loop.enabled;
+  });
+};
+
+const initShuffle = () => {
+  if (!shuffle) return;
+
+  // Ensure button is disabled by default.
+  shuffle.enabled = false;
+  if (shuffle.classList.contains("enabled")) {
+    shuffle.classList.remove("enabled");
+  }
+
+  shuffle.addEventListener("click", () => {
+    shuffle.classList.toggle("enabled");
+    shuffle.enabled = !shuffle.enabled;
+  });
+};
+
 const initThumbnailAutoResize = () => {
   // Automatically resize video thumbnail with the window.
   const resize = (entries) => {
@@ -22,36 +68,13 @@ const initThumbnailAutoResize = () => {
   resize_obj.observe(thumbnail.parentElement);
 };
 
-const initShuffle = () => {
-  if (!shuffle) return;
-
-  shuffle.addEventListener("click", () => {
-    shuffle.classList.toggle("enabled");
-  });
+const initYoutubeForm = () => {
 };
 
-const initLoop = () => {
-  if (!loop) return;
-
-  loop.addEventListener("click", () => {
-    loop.classList.toggle("enabled");
-  });
+export {
+  initCollapse,
+  initLoop,
+  initShuffle,
+  initThumbnailAutoResize,
+  initYoutubeForm,
 };
-
-const initCollapse = () => {
-  if (!collapse) return;
-
-  collapse.addEventListener("click", () => {
-    controls.classList.toggle("collapsed");
-    controls.classList.toggle("hidden");
-
-    // Switch the icon depending on collapsed state.
-    let symbol = controls.classList.contains("collapsed")
-      ? "keyboard_arrow_left"
-      : "keyboard_arrow_right";
-
-    collapse.textContent = symbol;
-  });
-};
-
-export { initCollapse, initLoop, initShuffle, initThumbnailAutoResize };
