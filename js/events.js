@@ -54,9 +54,4 @@ const initCollapse = () => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  initThumbnailAutoResize();
-  initCollapse();
-  initShuffle();
-  initLoop();
-});
+export { initCollapse, initLoop, initShuffle, initThumbnailAutoResize };
