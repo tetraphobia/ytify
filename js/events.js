@@ -1,8 +1,4 @@
-const collapseBtn = document.getElementById("collapse");
-const shuffleBtn = document.getElementById("shuffle");
-const loopBtn = document.getElementById("loop");
-const controlSection = document.getElementById("control");
-const videoThumbnail = document.getElementById("video-thumbnail");
+import { collapse, controls, loop, shuffle, thumbnail } from "./constants.js";
 
 const initThumbnailAutoResize = () => {
   // Automatically resize video thumbnail with the window.
@@ -13,48 +9,48 @@ const initThumbnailAutoResize = () => {
 
     // Make sure thumbnail is always 1:1 aspect ratio and never overflows.
     if (cr.width > cr.height) {
-      videoThumbnail.style.width = cr.height + "px";
-      videoThumbnail.style.height = "100%";
+      thumbnail.style.width = cr.height + "px";
+      thumbnail.style.height = "100%";
     } else if (cr.width < cr.height) {
-      videoThumbnail.style.height = cr.width + "px";
-      videoThumbnail.style.width = "100%";
+      thumbnail.style.height = cr.width + "px";
+      thumbnail.style.width = "100%";
     }
   };
 
   const resize_obj = new ResizeObserver(resize);
 
-  resize_obj.observe(videoThumbnail.parentElement);
+  resize_obj.observe(thumbnail.parentElement);
 };
 
 const initShuffle = () => {
-  if (!shuffleBtn) return;
+  if (!shuffle) return;
 
-  shuffleBtn.addEventListener("click", () => {
-    shuffleBtn.classList.toggle("enabled");
+  shuffle.addEventListener("click", () => {
+    shuffle.classList.toggle("enabled");
   });
 };
 
 const initLoop = () => {
-  if (!loopBtn) return;
+  if (!loop) return;
 
-  loopBtn.addEventListener("click", () => {
-    loopBtn.classList.toggle("enabled");
+  loop.addEventListener("click", () => {
+    loop.classList.toggle("enabled");
   });
 };
 
 const initCollapse = () => {
-  if (!collapseBtn) return;
+  if (!collapse) return;
 
-  collapseBtn.addEventListener("click", () => {
-    controlSection.classList.toggle("collapsed");
-    controlSection.classList.toggle("hidden");
+  collapse.addEventListener("click", () => {
+    controls.classList.toggle("collapsed");
+    controls.classList.toggle("hidden");
 
     // Switch the icon depending on collapsed state.
-    let symbol = controlSection.classList.contains("collapsed")
+    let symbol = controls.classList.contains("collapsed")
       ? "keyboard_arrow_left"
       : "keyboard_arrow_right";
 
-    collapseBtn.textContent = symbol;
+    collapse.textContent = symbol;
   });
 };
 

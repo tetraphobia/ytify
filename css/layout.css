@@ -31,15 +31,12 @@ section {
 }
 
 /* Control section. */
-#control {
+#controls {
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--bg);
     padding: 1.5em;
-}
-#control > div {
-    margin-top: 2em;
 }
 
 #media {
@@ -80,7 +77,7 @@ textarea:hover {
     flex-direction: row;
 }
 
-#control > .button-container {
+#controls > .button-container {
     justify-content: flex-end;
 }
 
@@ -105,11 +102,11 @@ textarea:hover {
     }
 
     /* Control section on desktop. */
-    #control {
+    #controls {
         max-width: 400px;
     }
 
-    #control > .button-container {
+    #controls > .button-container {
         justify-content: space-between;
     }
 

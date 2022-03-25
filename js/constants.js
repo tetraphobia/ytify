@@ -1,26 +1,27 @@
-const playerBtn = document.querySelectorAll('button');
-const footBtn = document.querySelectorAll('i');
-const input = document.querySelector('input');
-const badge = document.querySelector('.fa-list-ul');
-const audio = document.querySelector('audio');
-const img = document.querySelector('img');
-const array = []; // url storage
-const play = localStorage.getItem('play');
-const metadata = "https://noembed.com/embed?dataType=json&url=";
+const nowplaying = document.getElementById("nowplaying");
+const youtubeForm = document.getElementById("youtube-url");
+const shuffle = document.getElementById("shuffle");
+const skipprev = document.getElementById("skip-previous");
+const play = document.getElementById("play");
+const skipnext = document.getElementById("skip-next");
+const loop = document.getElementById("loop");
+const collapse = document.getElementById("collapse");
+const colorscheme = document.getElementById("colorscheme");
+const lightmode = document.getElementById("lightmode");
+const thumbnail = document.getElementById("video-thumbnail");
+const controls = document.getElementById("controls");
 
-const r = document.querySelector(':root');
-const colorBtn = document.querySelectorAll('span');
-
-const bgColor = (bgVal) => {
-  r.style.setProperty('--background', bgVal);
-  document.querySelector('meta[name="theme-color"]').setAttribute("content", bgVal);
-}
-const bgColor2 = (bgVal2) => {
-  r.style.setProperty('--background2', bgVal2);
-}
-const elementColor = (elementVal) => {
-  r.style.setProperty('--element', elementVal);
-}
-const colorThief = new ColorThief();
-
-export {playerBtn,footBtn,input,badge,audio,img,array,play,metadata,r,colorBtn,bgColor,bgColor2,elementColor,colorThief};
+export {
+  collapse,
+  colorscheme,
+  controls,
+  lightmode,
+  loop,
+  nowplaying,
+  play,
+  shuffle,
+  skipnext,
+  skipprev,
+  thumbnail,
+  youtubeForm,
+};
