@@ -1,0 +1,17 @@
+.material-icons {
+    transition: 0.15s;
+}
+@media (hover: hover) {
+  .material-icons:hover {
+    background-color: rgba(250, 250, 255, 0.1);
+    cursor: pointer;
+  }
+  .enabled {
+      background-color: var(--fg);
+      color: var(--bg);
+  }
+  .enabled:hover {
+      background-color: var(--fg);
+  }
+
+}

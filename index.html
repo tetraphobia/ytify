@@ -17,10 +17,10 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ytify.netlify.app">
   <meta property="og:description" content="50kbps Opus YouTube Audio Streaming Web App.">
-  <meta property="og:image" content="Assets/maskable_icon_x512.png">
+  <meta property="og:image" content="assets/maskable_icon_x512.png">
 
-  <link rel="icon" type="image/png" sizes="512x512" href="Assets/maskable_icon_x512.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="Assets/maskable_icon_x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/maskable_icon_x512.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/maskable_icon_x192.png" />
 
   <link rel="manifest" href="manifest.json" />
 
@@ -37,31 +37,33 @@
   <main>
 
     <section id="video">
-      <div id="video-placeholder">
+      <div id="video-thumbnail">
+        <h1>ytify</h1>
       </div>
     </section>
 
     <section id="control">
-      <h2 id="control-nowplaying">No Song Playing</h2>
-      <div id="control-mediabuttons">
-        <form id="control-youtube-url">
+      <h2 id="nowplaying">No Song Playing</h2>
+      <div id="media">
+        <form id="youtube-url">
           <input type="text" placeholder="Youtube URL"></input>
         </form>
-        <div id="control-progress-bar"></div>
-        <div class="control-button-container">
-          <span class="material-icons">shuffle</span>
-          <span class="material-icons">skip_previous</span>
-          <span class="material-icons">play_arrow</span>
-          <span class="material-icons">skip_next</span>
-          <span class="material-icons">loop</span>
+        <div id="progress-bar"></div>
+        <div class="button-container">
+          <span id="shuffle" class="material-icons">shuffle</span>
+          <span id="skip-previous" class="material-icons">skip_previous</span>
+          <span id="play" class="material-icons">play_arrow</span>
+          <span id="skip-next" class="material-icons">skip_next</span>
+          <span id="loop" class="material-icons">loop</span>
         </div>
       </div>
-      <div class="control-button-container">
-          <span class="material-icons">keyboard_arrow_right</span>
-          <span class="material-icons">settings</span>
+      <div class="button-container">
+          <span id="collapse" class="material-icons">keyboard_arrow_right</span>
+          <span id="settings" class="material-icons">settings</span>
       </div>
     </section>
   </main>
+  <script type="text/javascript" src="js/events.js"></script>
 </body>
 
 </html>

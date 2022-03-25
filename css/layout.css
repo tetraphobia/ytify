@@ -15,16 +15,18 @@ section {
 
 /* Video player section. */
 #video {
+    flex-grow: 1;
     display: inline-flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
+    flex-direction: column;
 }
 
-#video-placeholder {
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    [dimension]: 100%;
+#video-thumbnail {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--bg-dark);
 }
 
@@ -32,24 +34,26 @@ section {
 #control {
     display: inline-flex;
     flex-direction: column;
-    flex-grow: 1;
     justify-content: space-between;
     background-color: var(--bg);
     padding: 1.5em;
 }
+#control > div {
+    margin-top: 2em;
+}
 
-#control-mediabuttons {
+#media {
     display: inline-flex;
     flex-direction: column;
 }
 
-#control-mediabuttons > form,
-#control-mediabuttons > div {
+#media > form,
+#media > div {
     margin-top: .5em;
     margin-bottom: .5em;
 }
 
-#control-youtube-url > input {
+#youtube-url > input {
     box-sizing: border-box;
     width: 100%;
     padding: .7em;
@@ -62,26 +66,29 @@ input:focus, textarea:focus {
     border-color: var(--trim) !important;
 }
 
-#control-progress-bar {
+#progress-bar {
     background-color: var(--trim);
     border-radius: 5px;
     height: 5px;
 }
 
-.control-button-container {
+.button-container {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-/* Media queries for desktop. */
-@media only screen and (min-width: 1000px) {
-    main {
-        flex-direction: row;
-    }
+#collapse {
+    display: none;
+}
 
-    /* Video player section on desktop. */
-    #video {
+#settings {
+    margin-left: auto;
+}
+
+/* Media queries for desktop. */
+@media only screen and (min-width: 800px) {
+    main {
         flex-direction: row;
     }
 
@@ -90,4 +97,28 @@ input:focus, textarea:focus {
         max-width: 400px;
     }
 
+    /* Controls should always be shown on mobile. */
+    .collapsed,
+    .collapsed > div,
+    .collapsed > div > div {
+        flex-direction: column;
+        flex-shrink: 1;
+        width: auto;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .collapsed > .button-container {
+        flex-direction: column-reverse;
+    }
+
+    .hidden > h2,
+    .hidden > div > #youtube-url,
+    .hidden > div > #progress-bar {
+        display: none;
+    }
+
+    /* Collapse button should be shown on desktop */
+    #collapse {
+        display: block;
+    }
 }

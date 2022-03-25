@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
+h1,
 h2,
 input {
     text-align: center;
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
-    color: var(--fg)
 }
 
+h1 {
+    color: var(--bg-darker);
+    font-size: 10em;
+}
 h2 {
     color: var(--fg)
 }
@@ -19,4 +23,7 @@ input {
 .material-icons {
     color: var(--fg);
     font-size: 28px;
+    padding: 10px;
+    border-radius: 5px;
+    user-select: none;
 }
