@@ -58,12 +58,15 @@ section {
     width: 100%;
     padding: .7em;
     border-radius: 5px;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
 }
 
-input:focus, textarea:focus {
+input:focus,
+input:hover,
+textarea:focus,
+textarea:hover {
     outline: none;
-    border-color: var(--trim) !important;
+    border: 3px solid var(--trim) !important;
 }
 
 #progress-bar {
@@ -75,15 +78,24 @@ input:focus, textarea:focus {
 .button-container {
     display: inline-flex;
     flex-direction: row;
+}
+
+#control > .button-container {
+    justify-content: flex-end;
+}
+
+#media > .button-container {
     justify-content: space-between;
+}
+
+.button-container > span {
+    flex-grow: 1;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 #collapse {
     display: none;
-}
-
-#settings {
-    margin-left: auto;
 }
 
 /* Media queries for desktop. */
@@ -97,23 +109,30 @@ input:focus, textarea:focus {
         max-width: 400px;
     }
 
+    #control > .button-container {
+        justify-content: space-between;
+    }
+
     /* Controls should always be shown on mobile. */
     .collapsed,
-    .collapsed > div,
-    .collapsed > div > div {
+    .collapsed div {
         flex-direction: column;
         flex-shrink: 1;
         width: auto;
-        padding: 0 !important;
+        padding: .1em !important;
         margin: 0 !important;
     }
     .collapsed > .button-container {
         flex-direction: column-reverse;
     }
+    .collapsed .material-icons {
+        padding-left: .5em;
+        padding-right: .5em;
+    }
 
     .hidden > h2,
-    .hidden > div > #youtube-url,
-    .hidden > div > #progress-bar {
+    .hidden #youtube-url,
+    .hidden #progress-bar {
         display: none;
     }
 
