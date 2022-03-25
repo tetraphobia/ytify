@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+h2,
+input {
+    text-align: center;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--fg)
+}
+
+h2 {
+    color: var(--fg)
+}
+
+input {
+    color: var(--bg)
+}
+
+.material-icons {
+    color: var(--fg);
+    font-size: 28px;
+}

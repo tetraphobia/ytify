@@ -24,14 +24,44 @@
 
   <link rel="manifest" href="manifest.json" />
 
+  <link rel="stylesheet" href="css/vendor/normalize.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+  <link rel="stylesheet" href="css/colors.css" />
+  <link rel="stylesheet" href="css/typography.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="css/colors.css" />
-
-
 </head>
 
 <body>
+  <main>
+
+    <section id="video">
+      <div id="video-placeholder">
+      </div>
+    </section>
+
+    <section id="control">
+      <h2 id="control-nowplaying">No Song Playing</h2>
+      <div id="control-mediabuttons">
+        <form id="control-youtube-url">
+          <input type="text" placeholder="Youtube URL"></input>
+        </form>
+        <div id="control-progress-bar"></div>
+        <div class="control-button-container">
+          <span class="material-icons">shuffle</span>
+          <span class="material-icons">skip_previous</span>
+          <span class="material-icons">play_arrow</span>
+          <span class="material-icons">skip_next</span>
+          <span class="material-icons">loop</span>
+        </div>
+      </div>
+      <div class="control-button-container">
+          <span class="material-icons">keyboard_arrow_right</span>
+          <span class="material-icons">settings</span>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

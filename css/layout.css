@@ -1,0 +1,93 @@
+body {
+    background-color: var(--bg-darker);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+section {
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+/* Video player section. */
+#video {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#video-placeholder {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    [dimension]: 100%;
+    background-color: var(--bg-dark);
+}
+
+/* Control section. */
+#control {
+    display: inline-flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    background-color: var(--bg);
+    padding: 1.5em;
+}
+
+#control-mediabuttons {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#control-mediabuttons > form,
+#control-mediabuttons > div {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+#control-youtube-url > input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: .7em;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--trim) !important;
+}
+
+#control-progress-bar {
+    background-color: var(--trim);
+    border-radius: 5px;
+    height: 5px;
+}
+
+.control-button-container {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Media queries for desktop. */
+@media only screen and (min-width: 1000px) {
+    main {
+        flex-direction: row;
+    }
+
+    /* Video player section on desktop. */
+    #video {
+        flex-direction: row;
+    }
+
+    /* Control section on desktop. */
+    #control {
+        max-width: 400px;
+    }
+
+}
