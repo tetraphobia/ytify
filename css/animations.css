@@ -1,22 +1,22 @@
-@media (hover: hover) {
-  .material-icons {
-    background-color: var(--bg);
-    transition: 0.2s;
-    transition-property: background-color;
-  }
-  .material-icons:hover {
-    cursor: pointer;
-    background-color: rgba(255,255,255, 0.1)
-  }
+.material-icons {
+  background-color: var(--bg);
+  transition: 0.2s;
+  transition-property: background-color, color;
 }
-
 .enabled {
   transition: 0.2s;
   background-color: var(--fg);
   color: var(--bg);
 }
-.enabled:hover {
-  transition: 0.2s;
-  background-color: var(--fg);
-  color: var(--bg);
+
+@media (hover: hover) {
+  .material-icons:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255, 0.1)
+  }
+  .enabled:hover {
+    transition: 0.2s;
+    background-color: var(--fg);
+    color: var(--bg);
+  }
 }
