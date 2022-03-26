@@ -55,10 +55,7 @@ section {
 #nowplaying {
     padding-top: 1em;
 }
-#nowplaying,
-#media {
-    border-bottom: 2px solid var(--bg-light);
-}
+
 #media {
     display: inline-flex;
     flex-direction: column;

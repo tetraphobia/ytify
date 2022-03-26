@@ -8,7 +8,7 @@ import {
   youtubeinput,
 } from "./constants.js";
 
-import { getMetadataByURL } from "./youtube.js";
+import { playYoutubeVideo } from "./youtube.js";
 
 const initCollapse = () => {
   if (!collapse) return;
@@ -72,7 +72,7 @@ const initYoutubeForm = () => {
   if (!youtubeform || !youtubeinput) return;
 
   youtubeform.addEventListener("submit", (event) => {
-    getMetadataByURL(youtubeinput.value);
+    playYoutubeVideo(youtubeinput.value);
     event.preventDefault();
     youtubeinput.blur();
   });
