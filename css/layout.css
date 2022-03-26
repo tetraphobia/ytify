@@ -69,8 +69,35 @@ section {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+.slider-container {
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+.slider-container > #mute {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    flex-grow: 1;
+}
 
-#youtube-url > input {
+.slider-container > input[type="range"] {
+    background: transparent;
+    flex-grow: 4;
+}
+#volume::-webkit-slider-runnable-track,
+#volume::-moz-range-track
+{
+    background: var(--fg);
+    height: 0.2rem;
+    border-radius: 5px;
+}
+
+#volume::-moz-range-progress {
+    background: var(--trim);
+}
+
+
+#youtube-input {
     box-sizing: border-box;
     width: 100%;
     padding: .7em;
@@ -78,18 +105,23 @@ section {
     border: 3px solid transparent;
 }
 
-input:focus,
-input:hover,
-textarea:focus,
-textarea:hover {
+#youtube-input:focus,
+youtube-input:hover {
     outline: none;
     border: 3px solid var(--trim) !important;
 }
 
-#progress-bar {
-    background-color: var(--trim);
+#progress-bar,
+#volume-bar {
     border-radius: 5px;
     height: 5px;
+    margin-bottom: 1em;
+}
+#progress-bar {
+    background-color: var(--trim);
+}
+#volume-bar {
+    background-color: var(--trim2);
 }
 
 .button-container {

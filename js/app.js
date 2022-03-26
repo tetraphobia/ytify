@@ -1,6 +1,7 @@
 import {
   initCollapse,
   initLoop,
+  initPlay,
   initShuffle,
   initThumbnailAutoResize,
   initYoutubeForm,
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initThumbnailAutoResize();
   initYoutubeForm();
   initCollapse();
-  initShuffle();
+  initPlay();
+  // initShuffle();
   initLoop();
 });

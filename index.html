@@ -49,19 +49,22 @@
         <form id="youtube-url">
           <input id="youtube-input" type="text" placeholder="Youtube URL"></input>
         </form>
-        <div id="progress-bar"></div>
+        <div class="slider-container">
+          <span id="mute" class="material-icons disabled">volume_up</span>
+          <input type="range" id="volume"></input>
+        </div>
         <div class="button-container">
-          <span id="shuffle" class="material-icons">shuffle</span>
-          <span id="skip-previous" class="material-icons">skip_previous</span>
+          <span id="shuffle" class="material-icons disabled">shuffle</span>
+          <span id="skip-previous" class="material-icons disabled">skip_previous</span>
           <span id="play" class="material-icons">play_arrow</span>
-          <span id="skip-next" class="material-icons">skip_next</span>
+          <span id="skip-next" class="material-icons disabled">skip_next</span>
           <span id="loop" class="material-icons">loop</span>
         </div>
       </div>
       <div class="button-container">
           <span id="collapse" class="material-icons">keyboard_arrow_right</span>
-          <span id="colorscheme" class="material-icons">palette</span>
-          <span id="lightmode" class="material-icons">lightbulb</span>
+          <span id="colorscheme" class="material-icons disabled">palette</span>
+          <span id="lightmode" class="material-icons disabled">lightbulb</span>
       </div>
     </section>
   </main>

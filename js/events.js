@@ -2,6 +2,7 @@ import {
   collapse,
   controls,
   loop,
+  play,
   shuffle,
   thumbnail,
   youtubeform,
@@ -32,6 +33,30 @@ const initLoop = () => {
   loop.addEventListener("click", () => {
     loop.classList.toggle("enabled");
     loop.enabled = !loop.enabled;
+
+    let audio = document.getElementById("audioplayer");
+    if (!audio) return;
+
+    audio.loop = loop.enabled;
+  });
+};
+
+const initPlay = () => {
+  if (!play) return;
+
+  play.addEventListener("click", () => {
+    let audio = document.getElementById("audioplayer");
+    if (!audio) {
+      youtubeform.requestSubmit();
+      return;
+    }
+    if (audio.paused) {
+      audio.play();
+      play.innerText = "pause";
+    } else {
+      audio.pause();
+      play.innerText = "play_arrow";
+    }
   });
 };
 
@@ -81,6 +106,7 @@ const initYoutubeForm = () => {
 export {
   initCollapse,
   initLoop,
+  initPlay,
   initShuffle,
   initThumbnailAutoResize,
   initYoutubeForm,
