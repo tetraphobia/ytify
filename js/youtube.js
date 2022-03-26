@@ -19,10 +19,6 @@ const setThumbnail = (thumbnailURL) => {
   if (!thumbnailURL) return;
 
   console.log(thumbnailURL);
-  if (overlay.classList.contains("fadeout")) {
-    overlay.classList.remove("fadeout");
-    new Promise((r) => setTimeout(r, 2000));
-  }
 
   thumbnail.style.backgroundImage = `url(${thumbnailURL})`;
   overlay.classList.add("fadeout");
@@ -60,6 +56,11 @@ const playYoutubeVideo = async (url) => {
   const data = await getDataByURL(url);
 
   if (!data) return;
+
+  if (overlay.classList.contains("fadeout")) {
+    overlay.classList.remove("fadeout");
+    await new Promise((r) => setTimeout(r, 2000));
+  }
 
   setThumbnail(data.thumbnailURL);
   return;
