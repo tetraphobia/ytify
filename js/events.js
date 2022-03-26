@@ -1,4 +1,14 @@
-import { collapse, controls, loop, shuffle, thumbnail } from "./constants.js";
+import {
+  collapse,
+  controls,
+  loop,
+  shuffle,
+  thumbnail,
+  youtubeform,
+  youtubeinput,
+} from "./constants.js";
+
+import { getMetadataByURL } from "./youtube.js";
 
 const initCollapse = () => {
   if (!collapse) return;
@@ -19,12 +29,6 @@ const initCollapse = () => {
 const initLoop = () => {
   if (!loop) return;
 
-  // Ensure button is disabled by default.
-  loop.enabled = false;
-  if (loop.classList.contains("enabled")) {
-    loop.classList.remove("enabled");
-  }
-
   loop.addEventListener("click", () => {
     loop.classList.toggle("enabled");
     loop.enabled = !loop.enabled;
@@ -34,12 +38,6 @@ const initLoop = () => {
 const initShuffle = () => {
   if (!shuffle) return;
 
-  // Ensure button is disabled by default.
-  shuffle.enabled = false;
-  if (shuffle.classList.contains("enabled")) {
-    shuffle.classList.remove("enabled");
-  }
-
   shuffle.addEventListener("click", () => {
     shuffle.classList.toggle("enabled");
     shuffle.enabled = !shuffle.enabled;
@@ -47,6 +45,8 @@ const initShuffle = () => {
 };
 
 const initThumbnailAutoResize = () => {
+  if (!thumbnail) return;
+
   // Automatically resize video thumbnail with the window.
   const resize = (entries) => {
     if (!entries) return;
@@ -69,6 +69,13 @@ const initThumbnailAutoResize = () => {
 };
 
 const initYoutubeForm = () => {
+  if (!youtubeform || !youtubeinput) return;
+
+  youtubeform.addEventListener("submit", (event) => {
+    getMetadataByURL(youtubeinput.value);
+    event.preventDefault();
+    youtubeinput.blur();
+  });
 };
 
 export {

@@ -1,21 +1,32 @@
 .material-icons {
   background-color: var(--bg);
-  transition: 0.2s;
-  transition-property: background-color, color;
 }
+
 .enabled {
   transition: 0.2s;
   background-color: var(--fg);
   color: var(--bg);
 }
 
+
+.fadeout {
+  opacity: 0;
+}
+
+#overlay {
+  transition: opacity 2s;
+}
+
 @media (hover: hover) {
   .material-icons:hover {
+    transition: 0.3s;
+    transition-property: background-color, hover;
     cursor: pointer;
     background-color: rgba(255,255,255, 0.1)
   }
+
   .enabled:hover {
-    transition: 0.2s;
+    transition: 0.3s;
     background-color: var(--fg);
     color: var(--bg);
   }

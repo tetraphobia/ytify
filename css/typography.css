@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-
+h1,
 h2,
 input {
     text-align: center;
@@ -7,12 +7,19 @@ input {
     font-family: 'Ubuntu', sans-serif;
 }
 
+h1 {
+    color: var(--bg-darker);
+    font-size: 6em;
+    border: 5px solid var(--bg-darker);
+    padding: .2em;
+}
 h2 {
-    color: var(--fg)
+    color: var(--fg);
+    padding-bottom: 1em;
 }
 
 input {
-    color: var(--bg)
+    color: var(--bg);
 }
 
 .material-icons {

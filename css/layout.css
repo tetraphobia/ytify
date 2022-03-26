@@ -28,6 +28,18 @@ section {
     justify-content: center;
     align-items: center;
     background-color: var(--bg-dark);
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-dark)
 }
 
 /* Control section. */
@@ -36,18 +48,29 @@ section {
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--bg);
-    padding: 1.5em;
+    padding: 0 1.5em 0;
+    border-top: 2px solid var(--bg-light);
 }
 
+#nowplaying {
+    padding-top: 1em;
+}
+#nowplaying,
+#media {
+    border-bottom: 2px solid var(--bg-light);
+}
 #media {
     display: inline-flex;
     flex-direction: column;
 }
 
 #media > form,
-#media > div {
-    margin-top: .5em;
-    margin-bottom: .5em;
+#media > #progress-bar {
+    margin-top: 1em;
+}
+.button-container {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 #youtube-url > input {
@@ -104,6 +127,8 @@ textarea:hover {
     /* Control section on desktop. */
     #controls {
         max-width: 400px;
+        border-left: 2px solid var(--bg-light);
+        border-top: none;
     }
 
     #controls > .button-container {
